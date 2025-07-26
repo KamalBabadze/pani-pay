@@ -1,26 +1,6 @@
-<div id='wm-widget' style='width: 200px; height: 50px;'></div>
+<div id='wm-widget' style='width: 200px;height: 50px;'></div>
 
 <script type='text/javascript' src='https://merchant.web.money/conf/lib/widgets/wmApp.js?v=1.6'></script>
 <script type='text/javascript'>
-window.webmoney.widgets().button.create({
-  "data": {
-    "amount": "7",
-    "purse": "Z389702362027",
-    "desc": "PaNi",
-    "paymentType": "none",  // ← пользователь сам выберет метод оплаты
-    "lmi_payment_no": null,
-    "forcePay": true
-  },
-  "style": {
-    "theme": "wm",
-    "showAmount": true,
-    "titleNum": 1,
-    "title": "",
-    "design": "skeuomorph"
-  },
-  "lang": "ru"
-}).on('paymentComplete', function (data) {
-  // здесь можно вставить действия после успешной оплаты
-  console.log('Оплата завершена:', data);
-}).mount('wm-widget');
+window.webmoney.widgets().button.create({"data":{"amount":"7","purse":"Z389702362027","desc":"PaNi","paymentType":"wm","lmi_payment_no":null,"forcePay":true},"style":{"theme":"wm","showAmount":true,"titleNum":1,"title":"","design":"skeuomorph"},"lang":"ru"}).on('paymentComplete', function (data) {/* your code */}).mount('wm-widget')
 </script>
