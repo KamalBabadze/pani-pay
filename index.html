@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Оплата за доступ</title>
+</head>
+<body style="text-align:center; font-family:sans-serif; margin-top:100px;">
+
+  <h1>Поддержите проект PaNi</h1>
+  <p>Разовая оплата за полный доступ к книге. Оплата означает вашу поддержку развития проекта PaNi.</p>
+
+  <div id='wm-widget' style='width: 200px;height: 50px; margin:auto;'></div>
+
+  <script type='text/javascript' src='https://merchant.web.money/conf/lib/widgets/wmApp.js?v=1.6'></script>
+  <script type='text/javascript'>
+    window.webmoney.widgets().button.create({
+      "data": {
+        "amount": "7",
+        "purse": "Z389702362027",
+        "desc": "PaNi book",
+        "paymentType": "card",
+        "lmi_payment_no": null,
+        "forcePay": true
+      },
+      "style": {
+        "theme": "wm",
+        "showAmount": true,
+        "titleNum": 1,
+        "title": "",
+        "design": "skeuomorph"
+      },
+      "lang": "ru"
+    }).on('paymentComplete', function (data) {
+      alert("Оплата завершена!");
+    }).mount('wm-widget');
+  </script>
+
+</body>
+</html>
